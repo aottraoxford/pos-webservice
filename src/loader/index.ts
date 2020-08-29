@@ -11,5 +11,9 @@ export default (app: Router) => {
         name: 'categoryModel',
         model: require('../model/category').default
     }
-    di([categoryModel])
+    const userModel = {
+        name: 'userModel',
+        model: require('../model/user').default
+    }
+    di([categoryModel, userModel])
 }
