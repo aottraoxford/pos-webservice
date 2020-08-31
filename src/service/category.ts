@@ -3,7 +3,7 @@ import { Model, Document } from 'mongoose'
 
 @Service()
 export class CategoryService {
-    constructor (@Inject('categoryModel') private categoryModel: Model<any, Document>) {}
+    constructor (@Inject('categoryModel') private categoryModel: Model<Document, any>) {}
 
     async createCategory (obj: {name: string, colorSymbol: string}) {
         const record = await this.categoryModel.create({

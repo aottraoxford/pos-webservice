@@ -5,7 +5,10 @@ import resolvers from '../graphql/resolver'
 
 const server = new ApolloServer({
     typeDefs: schema,
-    resolvers
+    resolvers,
+    formatError: error => {
+        return { message: error.message }
+    }
 })
 
 export default (app: any) => {
